@@ -15,6 +15,7 @@ import {
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Token from './components/Token';
+import Profile from './components/Profile';
 
 
 const cache = new InMemoryCache({
@@ -37,6 +38,7 @@ const App = () => (
         <li><Link to="/">Signup</Link></li>
         <li><Link to="/signIn">SignIn</Link></li>
         <li><Link to="/token">Token</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
       </ul>
     </div>
   </nav>
@@ -45,6 +47,7 @@ const App = () => (
           <Route exact path="/" component={SignUp} />
           <Route exact path="/signIn" component={SignIn} />
           <Route exact path="/token" component={Token} />
+          <Route exact path="/profile" component={Profile} />
         </Switch>  
       </div>
     </Router>

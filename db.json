@@ -11,6 +11,42 @@
       "email": "test2@test.com",
       "password": "$2a$10$IJGIKD0gjAkoFEU1NmvC/OSXj7wcNtKqEXn1T32/4GbMSzL1Z14TK",
       "id": 2
+    },
+    {
+      "name": "radu",
+      "email": "radu@test.com",
+      "password": "$2a$10$GCjtPLJ2S2.NM9cl0q63Yutl0lx56PGRGpbSt8rSi36VQYuwJS1AG",
+      "id": 3
+    },
+    {
+      "name": "radu vasile",
+      "email": "radu@test.com",
+      "password": "$2a$10$bI0TUFsAa0Q6ITjNwFvdiOn3WEZIeiRuq0MnAcxxAJy/g3ObSsAtG",
+      "id": 4
+    },
+    {
+      "name": "aaaa",
+      "email": "aaa@aaa.aa",
+      "password": "$2a$10$uf8sdEj7sp.x9elJieItY.aV6i.0Uvvp221u0y5XRPSxbiHhh16e2",
+      "id": 5
+    },
+    {
+      "name": "bbbb",
+      "email": "bbb@bb.com",
+      "password": "$2a$10$GbyV5ZCms8cfEz9K6GOatuwze3IT459ewzuUH8hFss76XkRryjb/m",
+      "id": 6
+    },
+    {
+      "name": "cccc",
+      "email": "cccc@ccc.cc",
+      "password": "$2a$10$pfK7stcEpYW6DlK5QUZxue7BS0U6n0oSy6Z2GS9cJX8eRRFXlScIu",
+      "id": 7
+    },
+    {
+      "name": "dddd",
+      "email": "dddd@ddd.dd",
+      "password": "$2a$10$.jZjFaIOv8X4azU0.F2r/.PgYgoJ4ZXVnotXPb3rmidGhPZD6z2Ea",
+      "id": 8
     }
   ]
 }

@@ -1,14 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Initial setup
+# Initial setup
 
-### `npm install`
+## `npm install`
 
-## Run scripts in parallel
+# Run scripts in parallel
 
-### `npm run start`
+## `npm run start`
 
-### npm run server
+## `npm run server`
 
-### `npm run json:server`
+## `npm run json:server`
 

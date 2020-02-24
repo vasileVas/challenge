@@ -5,8 +5,9 @@ export default gql`
     signIn(email:$email, password: $password) {
       id
       name
-      email,
+      email
       token
+      refreshToken
     }
   }
 `;

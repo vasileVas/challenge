@@ -9,7 +9,7 @@ const axios = require('axios');
 
 const UserType = require('./userType')
 
-const { APP_SECRET } = require('../config');
+const { APP_SECRET, APP_SECRET_REFRESH } = require('../config');
 
 const mutation = new GraphQLObjectType({
     name: 'Mutation',
@@ -31,10 +31,12 @@ const mutation = new GraphQLObjectType({
                 ).then(res => res.data);
 
                 const token = jwt.sign({ userId: user.id }, APP_SECRET);
+                const refreshToken = jwt.sign({ userId: user.id }, APP_SECRET_REFRESH);
 
                 return { 
                     ...user, 
-                    token
+                    token,
+                    refreshToken
                 };
 
             }
@@ -56,10 +58,12 @@ const mutation = new GraphQLObjectType({
                 }
 
                 const token = jwt.sign({ userId: user.id }, APP_SECRET);
+                const refreshToken = jwt.sign({ userId: user.id }, APP_SECRET_REFRESH);
 
                 return { 
                     ...user, 
-                    token
+                    token,
+                    refreshToken
                 };
                 
             }

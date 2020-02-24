@@ -10,8 +10,6 @@ const SignUp = (props) => {
 
     const [ signUp ] = useMutation(signUpMutation)
 
-    console.log("props", props)
-
     const handleOnSubmit = event => {
         event.preventDefault();
 
@@ -21,15 +19,13 @@ const SignUp = (props) => {
             const { token } = signUp || {};
             setCookie('token', token, 30);
 
-            setName('');
-            setEmail('');
-            setPassword('');
+            document.location.href = '/';
         })
     }
 
     return (
         <div className="container">
-            <h3>Signup</h3>
+            <h3>Sign Up</h3>
             <form onSubmit={handleOnSubmit}>
                 <label htmlFor="name">Name</label>
                 <input

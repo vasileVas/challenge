@@ -9,5 +9,9 @@ export const setCookie = (name, value, days) => {
     document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
 }
 
+export const authenticatedUser = () => {
+    return Boolean(getCookie('token'))
+}
+
 export const deleteCookie = (name) => { setCookie(name, '', -1); }
 

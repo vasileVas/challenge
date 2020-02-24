@@ -14,10 +14,9 @@ const rootQuery = new GraphQLObjectType({
         profile: {
             type: UserType,
             args: {
-                id: { type: new GraphQLNonNull(GraphQLString)  },
                 token: { type: new GraphQLNonNull(GraphQLString)  }
             },
-            async resolve(parentValue, { id, token }) {
+            async resolve(parentValue, { token }) {
 
                 const { userId } = jwt.verify(token, APP_SECRET);
 

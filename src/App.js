@@ -16,6 +16,8 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Token from './components/Token';
 import Profile from './components/Profile';
+import Logout from './components/Logout';
+import { authenticatedUser } from './utils';
 
 
 const cache = new InMemoryCache({
@@ -29,16 +31,27 @@ const client = new ApolloClient({
   link
 });
 
+
+
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
     <nav>
     <div className="nav-wrapper">
       <ul id="nav-mobile" className="right">
-        <li><Link to="/">Signup</Link></li>
-        <li><Link to="/signIn">SignIn</Link></li>
-        <li><Link to="/token">Token</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
+        {authenticatedUser() ? (
+          <>
+            <li><Link to="/token">Token</Link></li>
+            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/logout">Logout</Link></li>
+          </>
+        ) : (
+          <>
+            <li><Link to="/">Sign Up</Link></li>
+            <li><Link to="/signIn">Sign In</Link></li>
+          </>  
+        )}
+        
       </ul>
     </div>
   </nav>
@@ -48,6 +61,7 @@ const App = () => (
           <Route exact path="/signIn" component={SignIn} />
           <Route exact path="/token" component={Token} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/logout" component={Logout} />
         </Switch>  
       </div>
     </Router>

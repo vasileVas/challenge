@@ -47,8 +47,8 @@ const App = () => (
           </>
         ) : (
           <>
-            <li><Link to="/">Sign Up</Link></li>
-            <li><Link to="/signIn">Sign In</Link></li>
+            <li><Link to="/">Sign In</Link></li>
+            <li><Link to="/signUp">Sign Up</Link></li>
           </>  
         )}
         
@@ -57,8 +57,8 @@ const App = () => (
   </nav>
       <div className="container App">
         <Switch>
-          <Route exact path="/" component={SignUp} />
-          <Route exact path="/signIn" component={SignIn} />
+          <Route exact path="/" component={SignIn} />
+          <Route exact path="/signUp" component={SignUp} />
           <Route exact path="/token" component={Token} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/logout" component={Logout} />

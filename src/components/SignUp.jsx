@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from "@apollo/react-hooks";
 import signUpMutation from '../mutations/signUp'
-import { setCookie } from '../utils';
+import { authenticateUser } from '../utils';
 
 const SignUp = (props) => {
     const [name, setName] = useState('');
@@ -16,8 +16,8 @@ const SignUp = (props) => {
         signUp({
             variables: { name, email, password }
         }).then(({ data: { signUp } = {} }) => {
-            const { token } = signUp || {};
-            setCookie('token', token, 30);
+            const { token, refreshToken } = signUp || {};
+            authenticateUser(token, refreshToken)
 
             document.location.href = '/';
         })

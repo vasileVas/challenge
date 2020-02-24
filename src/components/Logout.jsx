@@ -1,8 +1,8 @@
-import { deleteCookie } from '../utils';
+import { logoutUser } from '../utils';
 
 const Logout = ({ history }) => {
 
-    deleteCookie('token');
+    logoutUser();
     document.location.href = '/';
 
     return null

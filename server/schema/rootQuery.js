@@ -36,6 +36,19 @@ const rootQuery = new GraphQLObjectType({
                     refreshToken,
                 }
             }
+        },
+        refreshToken: {
+            type: GraphQLString,
+            args: {
+                refreshToken: { type: new GraphQLNonNull(GraphQLString) },
+            },
+            async resolve(parentValue, { refreshToken }) {
+                const { userId } = jwt.verify(refreshToken, APP_SECRET_REFRESH);
+
+                const token = jwt.sign({ userId }, APP_SECRET);
+
+                return token;
+            }
         }
     }
 })

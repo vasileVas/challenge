@@ -6,6 +6,7 @@ import { authenticateUser } from '../utils';
 const SignIn = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const [ signIn ] = useMutation(signInMutation)
 
@@ -19,7 +20,7 @@ const SignIn = (props) => {
             authenticateUser(token, refreshToken)
 
             document.location.href = '/';
-        })
+        }).catch(e => setError('Error on sign in!'))
     }
 
     return (
@@ -42,6 +43,12 @@ const SignIn = (props) => {
                     value={password}
                     onChange={event => setPassword(event.target.value)}
                 />
+
+                {error && (
+                    <div className="error red">
+                        {error}
+                    </div>
+                )}
 
                 <button className="btn waves-effect waves-light" type="submit">Submit
                     <i className="material-icons right">send</i>

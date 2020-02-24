@@ -11,6 +11,8 @@ const UserType = require('./userType')
 
 const { APP_SECRET, APP_SECRET_REFRESH } = require('../config');
 
+const { validateUser } = require('../utils');
+
 const mutation = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
@@ -22,6 +24,11 @@ const mutation = new GraphQLObjectType({
                 password: { type: new GraphQLNonNull(GraphQLString) },
             },
             async resolve(parentValue, { name, email, password: rawPassword }) {
+
+                const { error } = validateUser({ email, password: rawPassword });
+                if (error) {
+                    throw new Error(error.message);
+                }
 
                 const password = await bcrypt.hash(rawPassword, 10);
 
@@ -48,6 +55,12 @@ const mutation = new GraphQLObjectType({
                 password: { type: new GraphQLNonNull(GraphQLString) },
             },
             async resolve(parentValue, { email, password: checkPassword }) {
+
+                const { error } = validateUser({ email, password: checkPassword });
+                if (error) {
+                    throw new Error(error.message);
+                }
+
                 const user = await axios.get(
                     `http://localhost:3300/users?email=${email}`
                 ).then(res => res.data[0]);

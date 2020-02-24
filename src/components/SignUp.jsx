@@ -7,6 +7,7 @@ const SignUp = (props) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const [ signUp ] = useMutation(signUpMutation)
 
@@ -20,7 +21,7 @@ const SignUp = (props) => {
             authenticateUser(token, refreshToken)
 
             document.location.href = '/';
-        })
+        }).catch(e => setError('Error on sign up!'))
     }
 
     return (
@@ -50,6 +51,12 @@ const SignUp = (props) => {
                     value={password}
                     onChange={event => setPassword(event.target.value)}
                 />
+
+                {error && (
+                    <div className="error red">
+                        {error}
+                    </div>
+                )}
 
                 <button className="btn waves-effect waves-light" type="submit">Submit
                     <i className="material-icons right">send</i>

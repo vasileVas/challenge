@@ -2,14 +2,14 @@
   "users": [
     {
       "name": "test2",
-      "email": "test@test.com",
-      "encryptPass": "$2a$10$Gs6Ri9EKMD8gFWekwCcWY.KCsQ.Oy.479AztgDdAIsPuW1ERcMATO",
+      "email": "test1@test.com",
+      "password": "$2a$10$Gs6Ri9EKMD8gFWekwCcWY.KCsQ.Oy.479AztgDdAIsPuW1ERcMATO",
       "id": 1
     },
     {
       "name": "test2",
-      "email": "test@test.com",
-      "encryptPass": "$2a$10$IJGIKD0gjAkoFEU1NmvC/OSXj7wcNtKqEXn1T32/4GbMSzL1Z14TK",
+      "email": "test2@test.com",
+      "password": "$2a$10$IJGIKD0gjAkoFEU1NmvC/OSXj7wcNtKqEXn1T32/4GbMSzL1Z14TK",
       "id": 2
     }
   ]
